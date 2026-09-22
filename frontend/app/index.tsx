@@ -9,6 +9,10 @@ export default function HomeScreen() {
       <Link href="/usuarios" style={styles.linkButton}>
         <Text style={styles.linkText}>Ir al CRUD de Usuarios</Text>
       </Link>
+
+      <Link href="/giroscopio" style={[styles.linkButton, styles.linkSecundario]}>
+        <Text style={styles.linkText}>Probar giroscopio y orientación</Text>
+      </Link>
     </View>
   );
 }
@@ -37,6 +41,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3
+  },
+  linkSecundario: {
+    backgroundColor: '#495057',
+    marginTop: 14
   },
   linkText: { 
     color: '#fff', 

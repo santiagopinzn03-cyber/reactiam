@@ -33,7 +33,13 @@
           "imageWidth": 76
         }
       ],
-      "expo-mail-composer"
+      "expo-mail-composer",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Necesitamos leer el giroscopio y el acelerómetro para mostrar la posición del celular."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
