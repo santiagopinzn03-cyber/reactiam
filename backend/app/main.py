@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
-from app.routers import materiales, usuarios
+from app.routers import usuarios
 
 # Crea las tablas que falten en la base de datos (no borra las existentes)
 Base.metadata.create_all(bind=engine)
@@ -17,10 +17,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(materiales.router)
 app.include_router(usuarios.router)
 
 
 @app.get("/")
 def raiz():
     return {"mensaje": "API de Titán V corriendo correctamente"}
+
+
+@app.get("/health")
+def health():
+    return {"estado": "ok"}
